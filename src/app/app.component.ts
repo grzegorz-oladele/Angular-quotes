@@ -30,4 +30,12 @@ export class AppComponent {
   addVote(quotation: Quotation, value: number): void {
     quotation.votes += value;
   }
+
+  bestQuotes() {
+    return this.quotes.filter(q => q.votes > 0)
+  }
+
+  worstQuotes() {
+    return this.quotes.filter(q => q.votes < 0)
+  }
 }
